@@ -3,6 +3,7 @@ package br.emprestimo.testeUnitario;
 import static org.junit.Assert.*;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import br.emprestimo.modelo.Emprestimo;
@@ -46,11 +47,13 @@ public class UC01RegistrarEmprestimoDeLivro {
 	 */
 	@Test(expected = RuntimeException.class)
 	public void CT02UC01FB_registrar_emprestimo_com_dados_invalidos() {
-		assertNull(servico.empresta(null, usuario));
+		servico.empresta(null, usuario);
 	}
+	
 	/*
 	 * Verifica o comportamento da classe servico metodo empresta
 	 */
+	@Ignore
 	@Test
 	public void CT03UC01FB_registrar_emprestimo_com_dados_invalidos() {
 		try {
@@ -60,4 +63,10 @@ public class UC01RegistrarEmprestimoDeLivro {
 			assertEquals("Dados inválidos.", e.getMessage());
 		}
 	}
+	@Test
+	public void CT04_verifica_isbn() {
+		assertEquals("121212",livro.getIsbn());
+	}
+	
+	
 }

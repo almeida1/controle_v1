@@ -7,6 +7,7 @@ import br.emprestimo.modelo.Emprestimo;
 import br.emprestimo.modelo.Livro;
 import br.emprestimo.modelo.Usuario;
 
+
 public class ServicoEmprestimo {
 	public Emprestimo empresta(Livro livro, Usuario usuario) {
 		if (livro == null | usuario == null) {
